@@ -5,6 +5,11 @@
   "hexo": {
     "version": "3.8.0"
   },
+  "scripts": {
+    "deploy": "hexo g && hexo d",
+    "proxy": "git config --global https.proxy 'socks5://127.0.0.1:1080'",
+    "reset": "git config --global --unset https.proxy"
+  },
   "dependencies": {
     "hexo": "^3.8.0",
     "hexo-deployer-git": "^1.0.0",
