@@ -2,6 +2,14 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
+# Disqus
+disqus:
+  enable: false
+  shortname: ame-yu
+  count: true
+  lazyload: false
+  #post_meta_order: 0
+
 # Site
 title: Ame-yu's Blog
 subtitle: 
@@ -73,8 +81,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
-
+theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
