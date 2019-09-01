@@ -85,3 +85,5 @@
 {% block sidebar %}
   {{ sidebar_template.render(true) }}
 {% endblock %}
+
+

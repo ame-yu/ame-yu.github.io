@@ -16,3 +16,8 @@
 {% block sidebar %}
   {{ sidebar_template.render(false) }}
 {% endblock %}
+
+{% block splash %}
+  <div class="landing-page"></div>
+{% endblock %}
+

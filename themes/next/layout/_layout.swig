@@ -19,7 +19,7 @@
   {% include '_partials/head/head-unique.swig' %}
   {{- next_inject('head') }}
   <title>{% block title %}{% endblock %}</title>
-  <meta name="generator" content="Hexo {{ hexo_env('version') }}">
+  {#<meta name="generator" content="Hexo {{ hexo_env('version') }}">#}
   {{ partial('_third-party/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
@@ -28,7 +28,10 @@
   <div class="container{%- if theme.motion.enable %} use-motion{%- endif %}">
     <div class="headband"></div>
 
+    
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      {% block splash %}{% endblock %}
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
 
