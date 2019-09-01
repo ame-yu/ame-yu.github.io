@@ -2,21 +2,13 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Disqus
-disqus:
-  enable: false
-  shortname: ame-yu
-  count: true
-  lazyload: false
-  #post_meta_order: 0
-
 # Site
 title: Ame-yu's Blog
 subtitle: 
 description: 记录脚步，一个注重实效的全栈工程师的博客。
 keywords:
 author: Ame-yu
-language: ZH
+language: zh-CN
 timezone:
 
 # URL
@@ -91,8 +83,3 @@ deploy:
 sitemap:
     path: sitemap.xml
     template: ./sitemap_template.xml
-# Disqus 
-disqus:
-  enable: true
-  shortname: ame-yu
-  count: true

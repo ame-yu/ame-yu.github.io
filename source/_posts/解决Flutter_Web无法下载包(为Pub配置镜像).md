@@ -8,6 +8,7 @@ tags:
 flutter 更新了flutter1.5.4
 这次更新带来了preview的web
 然后卡在了[Install the flutter_web build tools](https://github.com/flutter/flutter_web#install-the-flutter_web-build-tools)
+<!-- more -->
 CMD提示
 ```shell
 + webdev 2.0.4
