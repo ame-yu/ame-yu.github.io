@@ -1,7 +1,10 @@
 ---
 title: 解决Flutter_Web无法下载包(为Pub配置镜像)
 date: 2019-05-11 20:11:16
+categories: 
+- 前端
 tags:
+- Flutter
 ---
 ### 引入
 2019 5月份

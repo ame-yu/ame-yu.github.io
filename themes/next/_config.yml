@@ -158,8 +158,8 @@ baidu_push: true
 menu:
   home: / || home
   #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -261,7 +261,7 @@ sidebar:
   #  - always  expand for all pages automatically.
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
-  display: post
+  display: hide
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
@@ -424,7 +424,7 @@ codeblock:
   # Code Highlight theme
   # Available values: normal | night | night eighties | night blue | night bright
   # See: https://github.com/chriskempson/tomorrow-theme
-  highlight_theme: normal
+  highlight_theme: night eighties
   # Add copy button on codeblock
   copy_button:
     enable: false
@@ -610,17 +610,17 @@ comments:
   storage: true
   # Modify texts or order for any navs, here are some examples.
   nav:
-    disqus:
-      text: Load Disqus
-      order: -1
+    #disqus:
+      #text: Load Disqus
+      #order: -1
     #facebook_comments_plugin:
     #  text: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
-    #gitalk:
-    #  order: -2
+    gitalk:
+      order: -1
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: ame-yu
   count: false
   lazyload: true
@@ -674,17 +674,17 @@ livere_uid: # <your_uid>
 # Demo: https://gitalk.github.io
 # For more information: https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  enable: true
+  github_id: ame-yu # GitHub repo owner
+  repo: ame-yu.github.io # Repository name to store issues
+  client_id: 486011d8ebe151bf1ca4 # GitHub Application Client ID
+  client_secret: 0cf42a804ea915624186e2a7af571308205d9884 # GitHub Application Client Secret
+  admin_user: ame-yu # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language:
+  language: zh-CN
 
 
 # ---------------------------------------------------------------
