@@ -19,5 +19,8 @@
 
 {% block splash %}
   <div class="landing-page"></div>
+  {{- next_js('js.cookie.js') }}
+  {{- next_js('dayjs.js') }}
+  {{- next_js('custom.js') }}
 {% endblock %}
 
