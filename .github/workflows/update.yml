@@ -1,0 +1,40 @@
+# Check frequency
+on:
+  schedule:
+  - cron: "0 2 * * 5"
+env:
+  # !!!If you forked vue-blog, replace it!!!
+  VUE_BLOG_REPOSITORY: ame-yu/vue-blog
+jobs:
+  precheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: denolib/setup-deno@v1.3.0
+      - id: compare-date
+        run: deno --allow-env --allow-net --allow-write --allow-run https://github.com/ame-yu/vue-blog-toolkit/releases/download/latest/check-update.js
+    outputs:
+      should-update: ${{ steps.compare-date.outputs.should-update }}
+
+  update:
+    name: build&update
+    needs: precheck
+    if: needs.precheck.outputs.should-update
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.0.0
+        with: 
+          repository: ${{ env.VUE_BLOG_REPOSITORY }}
+      - uses: actions/setup-node@v1.1.0
+      - run: npm install && npm run build
+      - run: mv ./dist/ ../site/ 
+      - uses: actions/checkout@v2.0.0
+      - run: |
+          cp -f setting.json ../site
+          rm -rf ./* && mv ../site/* .
+          git config --local user.email "action@github.com" && git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Vue blog regularly update" -a
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+  
