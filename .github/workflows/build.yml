@@ -10,17 +10,20 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
-    - name: build
+    - name: build docs
       run: |
-        npm i --silent
-        npm run docs:build
+        yarn --silent
+        yarn docs:build
     - name: Commit files
       run: |
+        git add docs/
         git config --local user.email "42380973+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git commit -m "Add changes" -a
+        git commit -m "build docs" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+        branch: docs
+        force: true
+        # branch: ${{ github.ref }}
