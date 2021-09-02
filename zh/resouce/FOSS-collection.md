@@ -1,6 +1,7 @@
 ---
 title: 开源软件收藏
 time: 2021-04-01
+update: 2021-06-01
 category: 资源
 tag:
   - 资源
@@ -8,8 +9,9 @@ sticky: true
 ---
 
 ::: info
-`*`代表是命令行工具
 更新日期：2020-04-01
+
+`*`代表是命令行工具
 :::
 
 ## 工具类
@@ -26,7 +28,9 @@ sticky: true
 |[Pulover/PuloversMacroCreator](https://github.com/Pulover/PuloversMacroCreator)| 录制键鼠脚本|
 |[c0re100/qBittorrent-Enhanced-Edition](https://github.com/c0re100/qBittorrent-Enhanced-Edition)| BT下载|
 |[aria2/aria2](https://github.com/aria2/aria2)<sup>*</sup>| 多线程多协议下载 |
-|[canton7/SyncTrayzor](https://github.com/canton7/SyncTrayzor)| 多端文件同步|
+|[canton7/SyncTrayzor](https://github.com/canton7/SyncTrayzor)| Syncthing多端文件同步 |
+|[flameshot-org/flameshot](https://github.com/flameshot-org/flameshot)| 截图 |
+|[NickeManarin/ScreenToGif](https://github.com/NickeManarin/ScreenToGif)| 录屏Gif |
 ## 小组件
 |*名称*|*描述*|
 | --- | --- |
@@ -39,12 +43,15 @@ sticky: true
 
 |*名称*|*描述*|
 | --- | --- |
+|[kingToolbox/WindTerm](https://github.com/kingToolbox/WindTerm) | 跨平台SSH客户端 |
+|[kaikramer/keystore-explorer](https://gitlab.com/kaikramer/keystore-explorer) | 密钥库GUI（需JAVA环境） |
 |[HandBrake/HandBrake](https://github.com/HandBrake/HandBrake) | 视频编码工具(FFMPEG) |
 |[tonsky/FiraCode](https://github.com/tonsky/FiraCode) | 程序员推荐字体 |
 |[zerotier/ZeroTierOne](https://github.com/zerotier/ZeroTierOne) | 内网穿透 |
 |[HeidiSQL/HeidiSQL](https://github.com/HeidiSQL/HeidiSQL) | 数据库连接工具 |
 |[jgm/pandoc](https://github.com/jgm/pandoc)<sup>*</sup> | markdown格式转换工具 |
 |[inkscape/inkscape](https://gitlab.com/inkscape/inkscape) | SVG设计 |
+|[H-M-H/Weylus](https://github.com/H-M-H/Weylus)| 平板作为电脑触屏输入 |
 </details>
 
 <details>
@@ -57,11 +64,13 @@ sticky: true
 
 </details>
 
-### 候选列表（等待功能完善）
-- [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) 多平台的截图软件
-
 ## 附：开源Android软件收藏
-|**名称**|**描述**|
-| --- | --- |
-|[M66B/FairEmail](https://github.com/M66B/FairEmail)| 邮件客户端 |
-|[tachiyomiorg/tachiyomi](https://github.com/tachiyomiorg/tachiyomi)|漫画阅读器|
+|**名称**|**描述**| **需要Root** |
+| --- | --- |:---:|
+|[MuntashirAkon/AppManager](https://github.com/MuntashirAkon/AppManager)|功能全面的应用权限管理| ✔ |
+|[x0b/rcx](https://github.com/x0b/rcx) | 安卓rclone |  |
+|[AntennaPod/AntennaPod](https://github.com/AntennaPod/AntennaPod) | 播客 |  |
+|[andOTP/andOTP](https://github.com/andOTP/andOTP) | 两步验证认证器 |  |
+|[M66B/FairEmail](https://github.com/M66B/FairEmail)| 邮件客户端 | |
+|[syncthing/syncthing-android](https://github.com/syncthing/syncthing-android)| 安卓端Syncthing | |
+|[tachiyomiorg/tachiyomi](https://github.com/tachiyomiorg/tachiyomi)|漫画阅读器| |

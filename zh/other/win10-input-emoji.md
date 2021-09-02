@@ -17,7 +17,7 @@ Emoji 搜索仅存在于美式键盘输入模式下。中文（简体，中国�
 对比如图
 ![对比图](/images/emoji_input.jpg)
 
-拼音输入法中也存在Emoji语义化。比如输入`qu'kuan'ji`是能看到🏧（ATM）的。但是像😸就很难想到对应中文。来回切换中英输入环境也有些麻烦，所以考虑把通用的Emoji加入拼音输入法当作单词输入。
+拼音输入法中也存在Emoji语义化。比如输入`qu'kuan'ji`是能看到🏧（ATM）的。但是像😸就很难想到对应中文。来回切换中英输入环境也有些麻烦，所以考虑把通用的Emoji加入拼音输入法当作单词输入。对熟悉表情符号简码(:emoji: syntax)的用户来说是很方便的。
 
 ## 准备
 先找一份Emoji语义对照表，我选择了[node-emoji](https://github.com/omnidan/node-emoji/blob/master/lib/emoji.json)里的emoji.json文件。
@@ -75,4 +75,5 @@ grey'question,❔,5
 1. <https://github.com/omnidan/node-emoji>
 1. <https://github.com/studyzy/imewlconverter>
 1. <https://stackoverflow.com/questions/6660977/convert-hyphens-to-camel-case-camelcase>
-
+1. <https://markdown.com.cn/extended-syntax/emoji.html>
+1. <https://gist.github.com/rxaviers/7360908>
