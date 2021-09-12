@@ -9,7 +9,7 @@ sticky: true
 ---
 
 ::: info
-更新日期：2020-04-01
+更新日期：2021-09-13
 
 `*`代表是命令行工具
 :::
@@ -22,7 +22,6 @@ sticky: true
 |[xanderfrangos/twinkle-tray](https://github.com/xanderfrangos/twinkle-tray)| 多屏幕亮度管理|
 |[zufuliu/notepad2](https://github.com/zufuliu/notepad2)| 替代系统Notepad|
 |[obsproject/obs-studio](https://github.com/obsproject/obs-studio/releases)| 屏幕录制|
-|[Qv2ray/Qv2ray](https://github.com/Qv2ray/Qv2ray)| 功能强大的加密代理工具|
 |[Genymobile/scrcpy](https://github.com/Genymobile/scrcpy)<sup>*</sup>| 安卓屏幕投影|
 |[QL-Win/QuickLook](https://github.com/QL-Win/QuickLook)| 空格快速预览|
 |[Pulover/PuloversMacroCreator](https://github.com/Pulover/PuloversMacroCreator)| 录制键鼠脚本|
@@ -32,7 +31,7 @@ sticky: true
 |[flameshot-org/flameshot](https://github.com/flameshot-org/flameshot)| 截图 |
 |[NickeManarin/ScreenToGif](https://github.com/NickeManarin/ScreenToGif)| 录屏Gif |
 ## 小组件
-|*名称*|*描述*|
+|**名称**|**描述**|
 | --- | --- |
 |[XiaofengdiZhu/openhardwaremonitor](https://github.com/XiaofengdiZhu/openhardwaremonitor) |对[原版](https://github.com/openhardwaremonitor/openhardwaremonitor)进行了本地化，有Release|
 |[zhongyang219/TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor)|任务栏显示网速内存CPU信息|
@@ -41,8 +40,9 @@ sticky: true
 <details>
   <summary>程序员推荐</summary>
 
-|*名称*|*描述*|
+|**名称**|**描述**|
 | --- | --- |
+|[microsoft/PowerToys](https://github.com/microsoft/PowerToys) | Windows生产力工具 |
 |[kingToolbox/WindTerm](https://github.com/kingToolbox/WindTerm) | 跨平台SSH客户端 |
 |[kaikramer/keystore-explorer](https://gitlab.com/kaikramer/keystore-explorer) | 密钥库GUI（需JAVA环境） |
 |[HandBrake/HandBrake](https://github.com/HandBrake/HandBrake) | 视频编码工具(FFMPEG) |
@@ -55,12 +55,17 @@ sticky: true
 </details>
 
 <details>
-  <summary>跨平台脚本</summary>
+  <summary>脚本类</summary>
 
-|*名称*|*描述*|
+|**命令行脚本**|**描述**|
 | --- | --- |
 |[ytdl-org/youtube-dl](https://github.com/ytdl-org/youtube-dl) | Youtube下载
 |[tonsky/FiraCode](https://github.com/tonsky/FiraCode) | Bilibili下载
+
+|**浏览器脚本**|**描述**|
+| --- | --- |
+|[the1812/Bilibili-Evolved](https://github.com/the1812/Bilibili-Evolved) | 哔哩哔哩增强脚本
+
 
 </details>
 
