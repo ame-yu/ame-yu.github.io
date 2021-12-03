@@ -2,7 +2,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   title: `Kyle Zhou's Blog`,
-  description: "Tinkerer never retire.",
+  description: "Resource & Ideas & Tinker Log",
 
   dest: "./docs",
 
@@ -30,7 +30,7 @@ module.exports = config({
     },
     "/zh/": {
       title: "Kyle Zhou的博客",
-      description: "生命不止，折腾不休",
+      description: "分享资源、捕获灵感、记录BUG",
     },
   },
 
