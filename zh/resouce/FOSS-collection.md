@@ -1,7 +1,7 @@
 ---
 title: 开源软件收藏
 time: 2021-04-01
-update: 2021-06-01
+update: 2022-05-11
 category: 资源
 tag:
   - 资源
@@ -9,10 +9,10 @@ sticky: true
 ---
 
 ::: info
-更新日期：2021-09-13
-
 `*`代表是命令行工具
 :::
+
+<https://github.com/ame-yu?tab=stars> 查看Github收藏夹
 
 ## 工具类
 |**名称**|**描述**|
@@ -33,9 +33,9 @@ sticky: true
 ## 小组件
 |**名称**|**描述**|
 | --- | --- |
-|[XiaofengdiZhu/openhardwaremonitor](https://github.com/XiaofengdiZhu/openhardwaremonitor) |对[原版](https://github.com/openhardwaremonitor/openhardwaremonitor)进行了本地化，有Release|
-|[zhongyang219/TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor)|任务栏显示网速内存CPU信息|
-|[d2phap/ImageGlass](https://github.com/d2phap/ImageGlass)|图片浏览器|
+|[XiaofengdiZhu/openhardwaremonitor](https://github.com/XiaofengdiZhu/openhardwaremonitor) | 对[原版](https://github.com/openhardwaremonitor/openhardwaremonitor)进行了本地化，有Release |
+|[zhongyang219/TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor)| 任务栏显示网速内存CPU信息 |
+|[d2phap/ImageGlass](https://github.com/d2phap/ImageGlass)| 图片浏览器 |
 ## 其他
 <details>
   <summary>程序员推荐</summary>
@@ -43,7 +43,7 @@ sticky: true
 |**名称**|**描述**|
 | --- | --- |
 |[microsoft/PowerToys](https://github.com/microsoft/PowerToys) | Windows生产力工具 |
-|[kingToolbox/WindTerm](https://github.com/kingToolbox/WindTerm) | 跨平台SSH客户端 |
+|[kingToolbox/WindTerm](https://github.com/kingToolbox/WindTerm) | 跨平台SSH客户端(部分闭源) |
 |[kaikramer/keystore-explorer](https://gitlab.com/kaikramer/keystore-explorer) | 密钥库GUI（需JAVA环境） |
 |[HandBrake/HandBrake](https://github.com/HandBrake/HandBrake) | 视频编码工具(FFMPEG) |
 |[tonsky/FiraCode](https://github.com/tonsky/FiraCode) | 程序员推荐字体 |
@@ -52,6 +52,8 @@ sticky: true
 |[jgm/pandoc](https://github.com/jgm/pandoc)<sup>*</sup> | markdown格式转换工具 |
 |[inkscape/inkscape](https://gitlab.com/inkscape/inkscape) | SVG设计 |
 |[H-M-H/Weylus](https://github.com/H-M-H/Weylus)| 平板作为电脑触屏输入 |
+|[M2Team/NanaZip](https://github.com/M2Team/NanaZip)| 优化7-Zip在Win11体验 |
+
 </details>
 
 <details>
@@ -78,4 +80,5 @@ sticky: true
 |[andOTP/andOTP](https://github.com/andOTP/andOTP) | 两步验证认证器 |  |
 |[M66B/FairEmail](https://github.com/M66B/FairEmail)| 邮件客户端 | |
 |[syncthing/syncthing-android](https://github.com/syncthing/syncthing-android)| 安卓端Syncthing | |
-|[tachiyomiorg/tachiyomi](https://github.com/tachiyomiorg/tachiyomi)|漫画阅读器| |
+|[tachiyomiorg/tachiyomi](https://github.com/tachiyomiorg/tachiyomi)| 漫画阅读器 | |
+|[zhanghai/MaterialFiles](https://github.com/zhanghai/MaterialFiles)| 文件管理器 | |
