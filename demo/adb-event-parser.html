@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adb event parser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/0.0.0-20211026153434/primer.css">
+    <style>
+        #app {
+            gap: 2vw;
+        }
+
+        .in,
+        .out {
+            flex: 1;
+            flex-basis: 20rem;
+        }
+
+        #event-input {
+            transition: .5s;
+            height: 70vh;
+        }
+
+        @media screen and (max-width: 720px) {
+            #event-input {
+                max-height: 10vh;
+            }
+
+            #event-input:focus {
+                max-height: 80vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak class="mt-5 p-3 d-flex flex-wrap">
+        <div class="in d-flex flex-justify-center">
+            <textarea v-model="text" id="event-input" class="form-control flex-1"
+                placeholder="add device 1: /dev/input/event4..."></textarea>
+        </div>
+        <div class="out d-flex-column">
+            <div class="Subhead mt-4 text-center">
+                <div class="Subhead-heading">Result <span @click="copyIt">📋</span></div>
+            </div>
+            <div class="markdown-body">
+                <pre><code>{{ result }}</code></pre>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { createApp, ref, onMounted, computed } from "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.23/vue.esm-browser.prod.min.js";
+        const app = {
+            setup() {
+                const text = ref("");
+
+                onMounted(() => {
+                    navigator.clipboard.readText().then((it) => {
+                        if (typeof it !== "string") return
+                        text.value = it.trim();
+                    });
+                });
+
+                const detailBtn = computed(() => {
+                    return text.value.includes("EV_ABS") ? "Source" : "NO DATA";
+                });
+
+                const result = computed(() => {
+                    return parse(text.value).join("\n");
+                });
+            }
+        }
+        createApp(app).mount('#app')
+
+        function parse(text) {
+            const logs = [];
+            let lastActionTimeStamp = null;
+            const commands = [];
+            for (let line of text.split("\n")) {
+                addNextLine(line);
+            }
+            return commands;
+
+            function addNextLine(line) {
+                const evt = /(?<time>\d+\.\d+)..(?<device>(\/\w+){3}):\s\w+\s+(?<type>\w+)\s+(?<value>\w+)/g.exec(
+                    line
+                )?.groups;
+                if (!evt) return;
+                logs.push(evt);
+                if (evt.type === "BTN_TOUCH" && evt.value === "UP") {
+                    const startTime = logs.find((it) => it.type === "ABS_MT_TRACKING_ID")
+                        .time;
+                    const posXList = logs
+                        .filter((it) => it.type === "ABS_MT_POSITION_X")
+                        .map((it) => it.value);
+
+                    const posYList = logs
+                        .filter((it) => it.type === "ABS_MT_POSITION_Y")
+                        .map((it) => it.value);
+
+                    const duration = (Number(evt.time) - Number(startTime)) * 1000;
+                    const [startX, endX] = [posXList[0], posXList.at(-1)].map((it) =>
+                        parseInt(it, 16)
+                    );
+                    const [startY, endY] = [posYList[0], posYList.at(-1)].map((it) =>
+                        parseInt(it, 16)
+                    );
+                    if (
+                        duration > 600 ||
+                        Math.abs(endX - startX) + Math.abs(endY - startY) > 100
+                    ) {
+                        let out = `input swipe ${startX} ${startY} ${endX} ${endY} ${duration.toFixed(
+                            0
+                        )}`;
+                        commands.push(out);
+                        console.log(out);
+                    } else {
+                        let out = `input tap ${startX} ${startY}`;
+                        commands.push(out);
+                        console.log(out);
+                    }
+                    logs.length = 0;
+                    lastActionTimeStamp = evt.time;
+                } else if (evt.type === "ABS_MT_TRACKING_ID" && evt.value !== "ffffffff") {
+                    if (lastActionTimeStamp) {
+                        const sleepTime = Number(evt.time) - Number(lastActionTimeStamp);
+                        let out = `sleep ${sleepTime.toFixed(3)};`;
+                        commands.push(out);
+                        console.log(out);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insomnia-testsuit-order-editor</title>
+    <script type="module">
+        import Alpine from "https://unpkg.com/alpinejs?module";
+        const sortByCreatedTime = (a, b) => a.created - b.created;
+        Alpine.data("data", () => ({
+            input: "",
+            tests: {},
+            init() { },
+            get output() {
+                let context = "";
+                for (const group of Object.values(this.tests)) {
+                    for (const unit of group) {
+                        context += JSON.stringify(unit) + "\n";
+                    }
+                }
+                console.log(context);
+                return context;
+            },
+            get groups() {
+                return Object.keys(this.tests);
+            },
+            goUp(parentId, unitId) {
+                const unitGroup = this.tests[parentId];
+                const unit = unitGroup.find((it) => it._id === unitId);
+                const beforeTime = unitGroup
+                    .filter((it) => it.created < unit.created)
+                    .reduce((a, b) => {
+                        return a.created > b.created ? a : b;
+                    }, 0)?.created;
+                if (!beforeTime) return;
+                const newGroup = unitGroup.map((it) => {
+                    if (it.created === unit.created) {
+                        it.created = beforeTime;
+                    } else if (it.created === beforeTime) {
+                        it.created = unit.created;
+                    }
+                    return it;
+                });
+                this.tests[parentId] = newGroup.sort(sortByCreatedTime);
+            },
+            goDown(parentId, unitId) {
+                const unitGroup = this.tests[parentId];
+                const unit = unitGroup.find((it) => it._id === unitId);
+                const afterTime = unitGroup
+                    .filter((it) => it.created < unit.created)
+                    .reduce((a, b) => {
+                        return a.created > b.created ? a : b;
+                    }, Number.MAX_SAFE_INTEGER)?.created;
+                if (!afterTime) return;
+                const newGroup = unitGroup.map((it) => {
+                    if (it.created === unit.created) {
+                        it.created = afterTime;
+                    } else if (it.created === afterTime) {
+                        it.created = unit.created;
+                    }
+                    return it;
+                });
+                this.tests[parentId] = newGroup.sort(sortByCreatedTime);
+            },
+            copy() {
+                navigator.clipboard.writeText(this.output);
+                this.input = this.output;
+            },
+            handleInput(value) {
+                return value
+                    .split("\n")
+                    .map((it) => {
+                        try {
+                            return JSON.parse(it);
+                        } catch (e) {
+                            return null;
+                        }
+                    })
+                    .filter((it) => it?.parentId)
+                    .reduce((a, b) => {
+                        var group = a[b.parentId];
+                        if (!group) {
+                            a[b.parentId] = [b];
+                        } else {
+                            group.push(b);
+                            a[b.parentId] = group.sort(sortByCreatedTime);
+                        }
+                        return a;
+                    }, {});
+            }
+        }));
+        Alpine.start();
+    </script>
+    <style>
+        @import url("https://unpkg.com/@primer/css@16.3.0/dist/primer.css");
+    </style>
+</head>
+
+<body>
+    <div class="d-flex flex-column flex-justify-center m-4" x-data="data">
+        <textarea class="form-control" placeholder="paste insomnia.UnitTest.db json here" x-model="input"
+            x-init="$watch('input', v => {tests = handleInput(v)})">
+        </textarea>
+        <div x-show="groups.length > 0">
+            <div class="d-flex flex-column">
+                <template x-for="parentId in groups">
+                    <div class="Box my-2">
+                        <div class="Box-header">
+                            <h3 class="Box-title" x-text="parentId">
+                            </h3>
+                        </div>
+                        <template x-for="unit in tests[parentId]">
+                            <div class="Box-body d-flex flex-items-center">
+                                <div class="BtnGroup mr-2">
+                                    <button class="btn btn-sm BtnGroup-item" type="button"
+                                        @click="_=>{goUp(parentId,unit._id)}">☝️</button>
+                                    <button class="btn btn-sm BtnGroup-item" type="button"
+                                        @click="_=>{goDown(parentId,unit._id)}">👇</button>
+                                </div>
+                                <div x-text="unit.name"> </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <button class="btn" type="button" @click="copy">
+                    Copy & Output to textarea
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
