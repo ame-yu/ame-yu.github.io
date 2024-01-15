@@ -1,13 +1,13 @@
 ---
-blog: true
 home: true
+layout: BlogHome
 icon: home
 title: 博客主页
 heroImage: /logo.svg
 heroText: Kyle Zhou的博客
 heroFullScreen: true
 tagline: 你可以在这里放置你的口号与标语
-project:
+projects:
   - type: project
     name: flutter_style_transfer
     desc: Flutter图片风格转移
