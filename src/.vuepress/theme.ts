@@ -15,7 +15,7 @@ export default hopeTheme({
 
   logo: "/logo.svg",
 
-  repo: "https://github.com/ame-yu/ame-yu.github.io",
+  repo: "https://gitpod.io/?autostart=true#https://github.com/ame-yu/ame-yu.github.io",
 
   docsDir: "src",
 
@@ -74,12 +74,8 @@ export default hopeTheme({
     mdEnhance: {
       align: true,
       attrs: true,
-      codetabs: true,
       component: true,
       demo: true,
-      figure: true,
-      imgLazyload: true,
-      imgSize: true,
       include: true,
       mark: true,
       stylize: [
@@ -97,11 +93,10 @@ export default hopeTheme({
       ],
       sub: true,
       sup: true,
-      tabs: true,
       vPre: true,
 
       // 在启用之前安装 chart.js
-      // chart: true,
+      chart: true,
 
       // insert component easily
 

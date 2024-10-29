@@ -1,6 +1,6 @@
 ---
-title: 开源软件收藏
-time: 2021-04-01
+title: 开源软件推荐
+date: 2021-04-01
 update: 2022-05-11
 category: 资源
 tag:
@@ -15,21 +15,20 @@ sticky: true
 <https://github.com/ame-yu?tab=stars> 查看Github收藏夹
 
 ## 工具类
-|**名称**|**描述**|
-| --- | --- |
-|[winscp/winscp](https://github.com/winscp/winscp)| 主要支持WebDAV FTP S3|
-|[rclone/rclone](https://github.com/rclone/rclone)<sup>*</sup>| RClone支持的多种网络存储|
-|[xanderfrangos/twinkle-tray](https://github.com/xanderfrangos/twinkle-tray)| 多屏幕亮度管理|
-|[zufuliu/notepad2](https://github.com/zufuliu/notepad2)| 替代系统Notepad|
-|[obsproject/obs-studio](https://github.com/obsproject/obs-studio/releases)| 屏幕录制|
-|[Genymobile/scrcpy](https://github.com/Genymobile/scrcpy)<sup>*</sup>| 安卓屏幕投影|
-|[QL-Win/QuickLook](https://github.com/QL-Win/QuickLook)| 空格快速预览|
-|[Pulover/PuloversMacroCreator](https://github.com/Pulover/PuloversMacroCreator)| 录制键鼠脚本|
-|[c0re100/qBittorrent-Enhanced-Edition](https://github.com/c0re100/qBittorrent-Enhanced-Edition)| BT下载|
-|[aria2/aria2](https://github.com/aria2/aria2)<sup>*</sup>| 多线程多协议下载 |
-|[canton7/SyncTrayzor](https://github.com/canton7/SyncTrayzor)| Syncthing多端文件同步 |
-|[flameshot-org/flameshot](https://github.com/flameshot-org/flameshot)| 截图 |
-|[NickeManarin/ScreenToGif](https://github.com/NickeManarin/ScreenToGif)| 录屏Gif |
+|**名称**|**描述**| **Winget** |
+| --- | --- | --- |
+|[winscp/winscp](https://github.com/winscp/winscp)| 主要支持WebDAV FTP S3| winget install --id=WinSCP.WinSCP -i --scope machine |
+|[rclone/rclone](https://github.com/rclone/rclone)<sup>*</sup>| RClone支持的多种网络存储| |
+|[xanderfrangos/twinkle-tray](https://github.com/xanderfrangos/twinkle-tray)| 多屏幕亮度管理| |
+|[zufuliu/notepad2](https://github.com/zufuliu/notepad2)| 替代系统Notepad| |
+|[obsproject/obs-studio](https://github.com/obsproject/obs-studio/releases)| 屏幕录制| winget install --id=OBSProject.OBSStudio |
+|[Genymobile/scrcpy](https://github.com/Genymobile/scrcpy)<sup>*</sup>| 安卓屏幕投影| |
+|[Pulover/PuloversMacroCreator](https://github.com/Pulover/PuloversMacroCreator)| 录制键鼠脚本| |
+|[c0re100/qBittorrent-Enhanced-Edition](https://github.com/c0re100/qBittorrent-Enhanced-Edition)| BT下载| winget install --id=c0re100.qBittorrent-Enhanced-Edition |
+|[aria2/aria2](https://github.com/aria2/aria2)<sup>*</sup>| 多线程多协议下载 | |
+|[canton7/SyncTrayzor](https://github.com/canton7/SyncTrayzor)| Syncthing多端文件同步 | |
+|[ShareX/ShareX](https://github.com/ShareX/ShareX)| 截图 | winget install --id=ShareX.ShareX |
+|[NickeManarin/ScreenToGif](https://github.com/NickeManarin/ScreenToGif)| 录屏Gif | |
 ## 小组件
 |**名称**|**描述**|
 | --- | --- |
@@ -61,7 +60,6 @@ sticky: true
 
 |**命令行脚本**|**描述**|
 | --- | --- |
-|[ytdl-org/youtube-dl](https://github.com/ytdl-org/youtube-dl) | Youtube下载
 |[tonsky/FiraCode](https://github.com/tonsky/FiraCode) | Bilibili下载
 
 |**浏览器脚本**|**描述**|
@@ -75,10 +73,9 @@ sticky: true
 |**名称**|**描述**| **需要Root** |
 | --- | --- |:---:|
 |[MuntashirAkon/AppManager](https://github.com/MuntashirAkon/AppManager)|功能全面的应用权限管理| ✔ |
-|[x0b/rcx](https://github.com/x0b/rcx) | 安卓rclone |  |
+|[newhinton/Round-Sync](https://github.com/newhinton/Round-Sync) | 安卓rclone |  |
 |[AntennaPod/AntennaPod](https://github.com/AntennaPod/AntennaPod) | 播客 |  |
-|[andOTP/andOTP](https://github.com/andOTP/andOTP) | 两步验证认证器 |  |
-|[M66B/FairEmail](https://github.com/M66B/FairEmail)| 邮件客户端 | |
+|[stratumauth/app](https://github.com/stratumauth/app) | 两步验证认证器 |  |
 |[syncthing/syncthing-android](https://github.com/syncthing/syncthing-android)| 安卓端Syncthing | |
-|[tachiyomiorg/tachiyomi](https://github.com/tachiyomiorg/tachiyomi)| 漫画阅读器 | |
+|[mihonapp/mihon](https://github.com/mihonapp/mihon)| 漫画阅读器 | |
 |[zhanghai/MaterialFiles](https://github.com/zhanghai/MaterialFiles)| 文件管理器 | |
